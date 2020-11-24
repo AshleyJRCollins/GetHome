@@ -1,0 +1,7 @@
+<%= simple_form_for(@request) do |f| %>
+  <%= f.input :starting_location %>
+  <%= f.input :ending_location %>
+  <%= f.submit "Get Home" %>
+  <% end %>
+
+<%= link_to 'Back', root_path %>
