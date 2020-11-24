@@ -1,0 +1,16 @@
+<h1>Journey details</h1>
+
+<h3>Time to pickup</h3>
+
+
+<h3>Time of journey</h3>
+
+<%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
+<h3><%= @name %></h3>
+<p>Pick up location: <%= @starting_location %></p>
+<p>Drop-off location: <%= @ending_location %></p>
+
+<%= link_to "Decline",
+            new_request_path,
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
