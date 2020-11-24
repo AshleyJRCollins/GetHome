@@ -1,0 +1,7 @@
+<h1>List of pick-ups to choose from</h1>
+
+<% @requests.each do |request| %>
+<p>Pick up - <%= request.starting_location %></p>
+<p>Destination - <%= request.ending_location %></p>
+<%= link_to 'Accept', new_ride_path %>
+<% end %>
