@@ -10,13 +10,18 @@
 <p>Pick up location: <%= @request.starting_location %></p>
 <p>Drop-off location: <%= @request.ending_location %></p>
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <% if @request.user == current_user %>
 <%= link_to "Decline",
             new_request_path,
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-else
 
+<% end %>
 
 
 
