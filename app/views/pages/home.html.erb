@@ -1,4 +1,23 @@
-<p>Choose a Status</p>
-<h1><%= link_to 'Passanger', new_request_path %></h1>
+<div class="page">
+	<div class="frase">
+		<p>Choose a Status</p>
+	</div>
+   <div class="zz">
+		<div class="status">
+			<%=link_to new_request_path, class: "btn" do %>
+		      <div>
+				   <h1 class="user">Passenger</h1>
+			    </div>
+			<% end %>
+		</div>
 
-<h1><%= link_to 'Driver', requests_path %></h1>
+   
+	  <div class="status">
+		   <%= link_to requests_path,  class: "btn" do  %>
+			   <div>
+					<h1 class="user">Driver</h1>
+			   </div>
+		   <% end %>
+	   </div>
+   </div>
+</div>
