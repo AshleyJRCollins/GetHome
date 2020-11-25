@@ -20,8 +20,8 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
-    request.destroy
-    redirect_to new_request_path
+    #request.destroy
+    #redirect_to new_request_path
   end
 
   private
