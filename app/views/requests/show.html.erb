@@ -7,10 +7,16 @@
 
 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
 <h3><%= @name %></h3>
-<p>Pick up location: <%= @starting_location %></p>
-<p>Drop-off location: <%= @ending_location %></p>
+<p>Pick up location: <%= @request.starting_location %></p>
+<p>Drop-off location: <%= @request.ending_location %></p>
 
+<% if @request.user == current_user %>
 <%= link_to "Decline",
             new_request_path,
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+else
+
+
+
+
