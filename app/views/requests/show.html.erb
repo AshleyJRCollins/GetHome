@@ -6,17 +6,22 @@
 <h3>Time of journey</h3>
 
 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
-<h3><%= @name %></h3>
+<h3><%= @current_user %></h3>
 <p>Pick up location: <%= @request.starting_location %></p>
 <p>Drop-off location: <%= @request.ending_location %></p>
 
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <% if @request.user == current_user %>
 <%= link_to "Decline",
-            new_request_path,
+            request_path(@request),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-else
-
-
-
-
+<% else %>
+<%= link_to "accept", request_rides_path(@request), method: "post" %>
+<% end %>
+<br>
+<%= link_to "back", requests_path %>

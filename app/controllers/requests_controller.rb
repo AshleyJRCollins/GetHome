@@ -22,10 +22,17 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
 
-    #request.destroy
-    #redirect_to new_request_path
+    @markers = [
+      { lat: @request.start_latitude, lng: @request.start_longitude },
+      { lat: @request.end_latitude, lng: @request.end_longitude }
+    ]
+  end
 
-   
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+
+    redirect_to new_request_path
   end
 
   private
