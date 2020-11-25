@@ -1,0 +1,50 @@
+.page {
+	
+    background-color: #95C8D8;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.frase {
+	 font-size: 40px;
+	 justify-content: center;
+	 display: flex;
+	 color: $darkblue;
+	 margin: 200px 0px 20px 0;
+}
+
+.status{
+	
+	width: 302px;
+	height: 137px;
+	background-color: $darkblue;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: center;
+	display: flex;
+		.btn {
+		text-decoration: none;
+	}
+}
+
+.user {
+	color: $lightblue;
+	padding-top: 15px;
+
+
+}
+// .zz{
+// 	    margin: 150px 5px 0px 5px;
+// }
+
+
+
+
+
+
+
