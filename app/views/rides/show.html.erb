@@ -1,0 +1,8 @@
+<h1>The journey home</h1>
+
+<%# if @request.user == current_user %>
+
+
+<%# else %>
+<%= link_to "Journey completed", new_ride_review_path(@ride) %>
+<%# end %>

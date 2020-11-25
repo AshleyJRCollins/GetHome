@@ -28,6 +28,13 @@ class RequestsController < ApplicationController
     ]
   end
 
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+
+    redirect_to new_request_path
+  end
+
   private
 
   def request_params
