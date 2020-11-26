@@ -5,6 +5,7 @@ class RidesController < ApplicationController
     @request = Request.find(params[:request_id])
     @ride.request = @request
     @ride.save
+    @request.confirmed!
     redirect_to ride_path(@ride)
   end
 

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_133204) do
+ActiveRecord::Schema.define(version: 2020_11_26_113057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "requests", force: :cascade do |t|
-    t.string "status"
     t.string "starting_location"
     t.string "ending_location"
     t.bigint "user_id", null: false
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_133204) do
     t.float "start_longitude"
     t.float "end_latitude"
     t.float "end_longitude"
+    t.integer "status"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 

@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :user
   validates :starting_location, :ending_location, presence: true
-
+  enum status: {confirmed: 0, declined: 1, pending: 2} 
   after_validation :geocode
 
   def geocode
@@ -15,3 +15,4 @@ class Request < ApplicationRecord
     self.end_longitude = long_end
   end
 end
+
