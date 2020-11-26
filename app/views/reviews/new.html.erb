@@ -1,5 +1,5 @@
 
-<%= simple_form_for(@ride, @review) do |f|%>
+<%= simple_form_for [@ride, @review] do |f|%>
   <%= f.input :rating %>
   <%= f.input :rating %>
   <%= f.input :content, as: :text %>
