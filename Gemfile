@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'geocoder'
+gem 'google_maps_service'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
