@@ -20,8 +20,9 @@
             request_path(@request),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+<%= link_to "Begun journey", request_rides_path(@request), method: "post" %>
 <% else %>
-<%= link_to "accept", request_rides_path(@request), method: "post" %>
+<%= link_to "Accept", request_rides_path(@request), method: "post" %>
 <% end %>
 <br>
 

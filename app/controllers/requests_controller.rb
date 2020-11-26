@@ -1,3 +1,5 @@
+# require_relative '../services/google_maps_directions'
+
 class RequestsController < ApplicationController
   skip_before_action :authenticate_user!
 
@@ -27,6 +29,9 @@ class RequestsController < ApplicationController
       { lat: @request.start_latitude, lng: @request.start_longitude },
       { lat: @request.end_latitude, lng: @request.end_longitude }
     ]
+
+    # gmaps = GoogleMapsDirections.new(@markers)
+    # route = gmaps.request_directions
   end
 
   def destroy
