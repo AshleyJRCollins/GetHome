@@ -45,3 +45,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
 })
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

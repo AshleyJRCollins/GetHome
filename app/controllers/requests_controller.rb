@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @requests = Request.all
+    @requests = Request.pending
   end
 
   def new
@@ -14,7 +14,8 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.user = current_user
-    if @request.save
+    @request.status = "pending"
+    if @request.save 
       redirect_to request_path(@request)
     else
       render :new
