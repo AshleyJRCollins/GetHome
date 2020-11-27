@@ -2,8 +2,9 @@
 <div class="container" id="ratings">
 	<div class="row">
 		<div class="col-xs-4">
-			<%= simple_form_for(@ride, @review) do |f|%>
-			   <%= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %> 
+			<% if @review.user == current_user %>
+      <%= simple_form_for[@ride, @review] do |f|%>
+			  <%= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %>
 			  <%= f.input :rating %>
 			  <%= f.input :content, as: :text %>
 			  <%= f.submit "Submit" %>
@@ -11,9 +12,10 @@
 		</div>
 	</div>
 </div>
-
+<% else %>
 <%= simple_form_for [@ride, @review] do |f|%>
   <%= f.input :rating %>
   <%= f.input :content, as: :text %>
   <%= f.submit "Submit" %>
+ <% end %>
  <% end %>
