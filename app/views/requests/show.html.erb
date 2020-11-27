@@ -1,12 +1,18 @@
 <h1>Journey details</h1>
 
-<h3>Time to pickup</h3>
 
+<h3>Time of journey home: 35 minutes</h3>
 
-<h3>Time of journey</h3>
-
+<% if @request.user == current_user %>
+<%= "" %>
+<% else %>
+<h3>Time to pickup: 3 minutes</h3>
 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
-<h3><%= @current_user %></h3>
+<h3>Name of passenger: <%= @request.user.first_name %> <%= @request.user.last_name %></h3>
+<h3>Car: <%= @request.user.car %></h3>
+<h3>Telephone number: <%= @request.user.phone_number %></h3>
+<% end %>
+
 <p>Pick up location: <%= @request.starting_location %></p>
 <p>Drop-off location: <%= @request.ending_location %></p>
 
@@ -15,14 +21,14 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<% if @request.user == current_user %>
-<%= link_to "Decline",
+<%# if @request.user == current_user %>
+<%#= link_to "Decline",
             request_path(@request),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-<% else %>
+<%# else %>
 <%= link_to "Accept", request_rides_path(@request), method: "post" %>
-<% end %>
+<%# end %>
 <br>
 
-<%= link_to "back", requests_path %>
+<%= link_to "Back", requests_path %>
