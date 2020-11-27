@@ -16,7 +16,7 @@ class RidesController < ApplicationController
   def update
     @ride = Ride.find(params[:id])
     if @ride.update(completed: true)
-      redirect_to rides_path
+      redirect_to new_ride_review_path(@ride)
     end
 
   end

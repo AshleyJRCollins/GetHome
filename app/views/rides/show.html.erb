@@ -2,8 +2,10 @@
 
 
 
-<%# if @ride.user == current_user %>
-<%= link_to "Journey completed", new_ride_review_path(@ride) %>
-<%# else %>
-<%#= link_to "Journey completed", ride_path(@ride), method: :put %>
-<%# end %>
+<% if @ride.user == current_user %>
+  <%= link_to "Journey completed", ride_path(@ride), method: :put %>
+<% else %>
+  <% if @ride.completed? %>
+    <%= link_to "Write a Review", new_ride_review_path(@ride) %>
+  <% end %>
+<% end %>
