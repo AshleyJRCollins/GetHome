@@ -1,8 +1,9 @@
-<h1>List of pick-ups to choose from</h1>
+<h1>List of Requests</h1>
 
 <% @requests.each do |request| %>
 <p>Pick up - <%= request.starting_location %></p>
 <p>Destination - <%= request.ending_location %></p>
+<p>Status - <%= request.status.capitalize %></p>
 <%= link_to 'Review', request_path(request) %>
 
 <% end %>

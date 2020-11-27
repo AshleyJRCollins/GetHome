@@ -1,26 +1,26 @@
-<% if @ride.user == current_user %>
+<%# if @ride.user == current_user %>
 
 
 <div class="container" id="ratings">
 	<div class="row">
 		<div class="col-xs-4">
-			<%= simple_form_for [@ride, @review] do |f|%>
-			   <%= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %>
-			  <%= f.input :rating %>
-			  <%= f.input :content, as: :text %>
-			  <%= f.submit "Submit" %>
-			 <% end %>
+      <%= simple_form_for [@ride, @review] do |f|%>
+        <%= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %>
+        <%= f.input :content, as: :text %>
+        <%= f.submit "Submit" %>
+       <% end %>
 		</div>
 	</div>
 </div>
 
+			<%#= simple_form_for [@ride, @review] do |f|%>
+			   <%#= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %>
+			  <%#= f.input :rating %>
+			  <%#= f.input :content, as: :text %>
+			  <%#= f.submit "Submit" %>
+			 <%# end %>
 
-<% else %>
+<%# else %>
 
-<%= simple_form_for [@ride, @review] do |f|%>
-  <%= f.input :rating %>
-  <%= f.input :content, as: :text %>
-  <%= f.submit "Submit" %>
- <% end %>
 
-<% end %>
+<%# end %>
