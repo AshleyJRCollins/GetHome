@@ -21,14 +21,14 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<% if @request.user == current_user %>
-<%= link_to "Decline",
+<%# if @request.user == current_user %>
+<%#= link_to "Decline",
             request_path(@request),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-<% else %>
+<%# else %>
 <%= link_to "Accept", request_rides_path(@request), method: "post" %>
-<% end %>
+<%# end %>
 <br>
 
-<%= link_to "back", requests_path %>
+<%= link_to "Back", requests_path %>
