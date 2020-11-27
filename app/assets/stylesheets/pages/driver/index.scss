@@ -1,0 +1,51 @@
+.titolo {
+	color: $darkblue;
+	padding: center;
+}
+
+.destination {
+	position: absolute;
+	width: 307px;
+	height: 181px;
+	margin: 20px;
+		.location {
+		color: $lightblue;
+		padding: 15px;
+		margin: 10px;
+		background: $darkblue;
+	    border-radius: 37px 20px;
+        box-shadow: 3px 7px 17px 0px rgba(14,0,0,0.58)
+
+	   }
+}
+
+.details {
+	    height: 40px;
+        width: 80px;
+        background-color: $lightblue;
+        border-radius: 23px 10px;
+        text-decoration: none;
+        right: 7px;
+        color: $darkblue;
+        .btn {
+        	color: $darkblue;
+        }
+}
+
+.back {
+	border-radius: 23px 10px;
+	background: $darkblue;
+	color: $lightblue;
+	text-decoration: none;
+	width: 80px;$-webkit-box-shadow: 7px 2px 27px 0px rgba(14,0,0,0.92); 
+    box-shadow: 3px 7px 17px 0px rgba(14,0,0,0.58);
+     .btn {
+     	color: $lightblue;
+
+     }
+
+}
+
+
+
+
