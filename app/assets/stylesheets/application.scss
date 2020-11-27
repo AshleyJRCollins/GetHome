@@ -13,15 +13,21 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/homepage";
+@import "pages/driver/index";
  @import "jquery-bar-rating/dist/themes/css-stars";
 
 body {
   margin-top: 100px;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  background: rgb(0,96,159);
+  background: linear-gradient(0deg, rgba(0,96,159,0.9822303921568627) 0%, rgba(187,227,239,1) 41%);
   
 }
 html {
   height: -webkit-fill-available;
+  background: rgb(0,96,159);
+  background: linear-gradient(0deg, rgba(0,96,159,0.9822303921568627) 0%, rgba(187,227,239,1) 41%);
+// 
 }
 

@@ -1,10 +1,24 @@
-<h1>List of pick-ups to choose from</h1>
-
-<% @requests.each do |request| %>
-<p>Pick up - <%= request.starting_location %></p>
-<p>Destination - <%= request.ending_location %></p>
-<%= link_to 'Review', request_path(request) %>
-
-<% end %>
-<br>
-<%= link_to 'Back', root_path %>
+<div class="index">
+	<div class="titolo">
+	<h1>List of pick-ups to choose from</h1>
+	</div>
+	
+	 <div class="destination">
+		<% @requests.each do |request| %>
+		   <div class="location">
+				<p>Pick up - <%= request.starting_location %></p>
+				<p>Destination - <%= request.ending_location %></p>
+				<div class="details">
+				<%= link_to 'Details', request_path(request), class: "btn" %>
+				</div>
+			</div>
+		 <% end %>
+	 
+	
+	
+		<br>
+		<div class="back">
+		 <%= link_to 'Back', root_path, class: "btn" %>
+		</div>
+	</div>
+</div>
