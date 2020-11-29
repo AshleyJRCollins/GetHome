@@ -23,8 +23,13 @@
   border: #95C8D8 solid 2px;
 }
 
-.navbar .nav-link {
+.navbar-lewagon .nav-item .nav-link {
   color: #95C8D8;
+  text-decoration: none;
+}
+
+.navbar-lewagon .nav-item .nav-link:hover {
+  color: white;
 }
 
 .title .titlebtn {
@@ -32,4 +37,6 @@
   text-decoration: none;
 }
 
-
+.title .titlebtn:hover {
+  color: white;
+}

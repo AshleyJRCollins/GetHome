@@ -1,5 +1,7 @@
-<h1>Journey details</h1>
+<div class="acontainertwo">
 
+<h1>Journey details</h1>
+<br>
 
 <h3>Time of journey home: 35 minutes</h3>
 
@@ -7,12 +9,12 @@
 <%= "" %>
 <% else %>
 <h3>Time to pickup: 3 minutes</h3>
-<%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" %>
+<%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id: "aavatar" %>
 <h3>Name of passenger: <%= @request.user.first_name %> <%= @request.user.last_name %></h3>
 <h3>Car: <%= @request.user.car %></h3>
 <h3>Telephone number: <%= @request.user.phone_number %></h3>
 <% end %>
-
+<br>
 <p>Pick up location: <%= @request.starting_location %></p>
 <p>Drop-off location: <%= @request.ending_location %></p>
 
@@ -21,18 +23,21 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<% if @request.user == current_user %>
-  <% if @request.pending? %>
-    <%= link_to "Cancel",
-                request_path(@request),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-  <% elsif @request.confirmed? %>
-    <%= link_to "See Your Trip", ride_path(Ride.find_by(request: @request)) %>
+<div class="align-self-center">
+  <% if @request.user == current_user %>
+    <% if @request.pending? %>
+      <%= link_to "Cancel booking",
+              request_path(@request),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg" %>
+    <% elsif @request.confirmed? %>
+      <%= link_to "See Your Trip", ride_path(Ride.find_by(request: @request)) %>
+    <% end %>
+  <% else %>
+  <%= link_to "Accept", request_rides_path(@request), method: "post", class: "btn btn-primary btn-lg btn-block" %>
   <% end %>
-<% else %>
-<%= link_to "Accept", request_rides_path(@request), method: "post" %>
-<% end %>
-<br>
-
-<%= link_to "Back", requests_path %>
+</div>
+<div class="align-self-center">
+  <%= link_to "Back", requests_path, class: "btn btn-primary btn-lg" %>
+</div>
+</div>

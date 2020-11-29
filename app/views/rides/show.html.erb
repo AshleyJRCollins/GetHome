@@ -1,11 +1,14 @@
-<h1>The Journey Home</h1>
+<div class="acontainertwo">
+
+  <h1>The Journey Home</h1>
 
 
 
 <% if @ride.user == current_user %>
-  <%= link_to "Journey completed", ride_path(@ride), method: :put %>
+  <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
 <% else %>
   <% if @ride.completed? %>
-    <%= link_to "Write a Review", new_ride_review_path(@ride) %>
+    <%= link_to "Write a Review", new_ride_review_path(@ride), class: "btn btn-primary btn-block" %>
   <% end %>
 <% end %>
+</div>
