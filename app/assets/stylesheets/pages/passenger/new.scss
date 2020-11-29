@@ -1,0 +1,19 @@
+.acontainer {
+  padding: 20px;
+  color: #003151;
+}
+
+.btn-primary {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #003151;
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: white;
+  color: #003151;
+}
