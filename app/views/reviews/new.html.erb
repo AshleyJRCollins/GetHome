@@ -2,11 +2,11 @@
 
 
 <div class="container" id="ratings">
-	<div class="row">
+	<div class="row1">
 		<div class="col-xs-4">
       <%= simple_form_for [@ride, @review] do |f|%>
-        <%= f.input :rating, collection: (1..5).to_a, lable: "Rate the Drivers Driving skills" %>
-        <%= f.input :content, as: :text %>
+        <p>  <%= f.input :rating, collection: (1..5).to_a, label: "Rate the Drivers Driving skills" %> </p>
+        <p>please take some time to describe the service <%= f.input :content, as: :text %>  </p>
         <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
        <% end %>
 		</div>

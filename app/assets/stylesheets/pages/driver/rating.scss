@@ -1,0 +1,22 @@
+ .br-widget {
+ 	display: flex;
+    justify-content: center;
+     margin: center;
+     background-size: 90px; 
+ }
+.form-control {
+	background: transparent;
+	border-color: $darkblue;
+
+}
+.select .optional {
+	justify-content: center;
+    display: flex;
+    font-size: 25px;
+
+}
+
+.row1 {
+	display: flex;
+    justify-content: center;
+}
