@@ -13,7 +13,7 @@ class RidesController < ApplicationController
       RequestChannel.broadcast_to(
         @request,
         render_to_string(partial: "shared/see_your_trips", locals: { request: @request })
-        )
+      )
       redirect_to ride_path(@ride)
     else
       render 'requests/show'
@@ -25,7 +25,6 @@ class RidesController < ApplicationController
     if @ride.update(completed: true)
       redirect_to new_ride_review_path(@ride)
     end
-
   end
 
   def show

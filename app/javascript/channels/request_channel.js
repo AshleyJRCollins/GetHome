@@ -7,10 +7,11 @@ const initRequestCable = () => {
     consumer.subscriptions.create({ channel: "RequestChannel", id: id }, {
       received(data) {
       // called when data is broadcast in the cable
-        acceptContainer.insertAdjacentHTML('afterbegin', data);
+        const cancelBooking = document.getElementById('cancel-booking');
+        cancelBooking.remove();
+        acceptContainer.insertAdjacentHTML('beforeend', data);
       },
     });
-  // }
 }
 
 export { initRequestCable };

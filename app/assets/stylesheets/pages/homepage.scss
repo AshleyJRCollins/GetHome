@@ -1,8 +1,4 @@
 
-//.body {
-//background-image: url ("https://images.pexels.com/photos/3459398/pexels-photo-3459398.jpeg")
-//}
-
 .page {
     position: absolute;
     height: 100%;
@@ -10,35 +6,51 @@
   }
 
 .frase {
-	 font-size: 25px;
+	 font-size: 30px;
 	 justify-content: center;
 	 display: flex;
 	 color: $white;
-	 //margin: 40px 0px 0px 0;
 }
 
-.status{
+// .status{
 
-	width: 302px;
-	height: 137px;
-	background-color: $darkblue;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-    width: 90%;
-    padding: 20px;
-    border-radius: 20px;
-    justify-content: center;
-	display: flex;
-		.btn {
-		text-decoration: none;
-	}
+// 	width: 302px;
+// 	height: 137px;
+// 	background-color: $darkblue;
+// 	margin: auto;
+// 	margin-top: 50px;
+// 	margin-bottom: 50px;
+//     width: 90%;
+//     padding: 20px;
+//     border-radius: 20px;
+//     justify-content: center;
+// 	display: flex;
+// 		.btn {
+// 		text-decoration: none;
+// 	}
+// }
+
+// .user {
+// 	color: $lightblue;
+// 	padding-top: 15px;
+// }
+.btn-outline-primary {
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  color: white;
+  border: white 2px solid;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  font-size: 40px;
 }
 
-.user {
-	color: $lightblue;
-	padding-top: 15px;
+.btn-outline-primary:hover {
+  background: white;
+  color: #003151;
+  border: white;
 }
+
+
 // .zz{
 // 	    margin: 150px 5px 0px 5px;
 // }
@@ -51,6 +63,7 @@
 
 .col-sm-4 {
   padding: 20px;
+  color: $darkblue;
 }
 
 .wrappertwo {
@@ -59,29 +72,52 @@
 }
 
 .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 600px;
+  height: 650px;
   //background-image: url('img_flowers.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   //background-repeat: no-repeat;
     //background-position: center center;
     //background-position-y: bottom;
+    margin-bottom: 10px;
       //padding: 250px 0;
   // height: 500px;
   // h1 {
   // margin: 0;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 3px rgba(0,0,0,5);
   // font-size: 32px;
   // font-weight: bold;
 }
 
 .acontainerthree {
-  padding: 20px;
-  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
+.banner-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  //background-image: url('img_flowers.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  //background-repeat: no-repeat;
+    //background-position: center center;
+    //background-position-y: bottom;
+    margin-bottom: 10px;
+}
 
+#quote {
+  color: white;
+}
 
 
 
