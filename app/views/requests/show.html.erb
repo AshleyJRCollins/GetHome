@@ -26,16 +26,7 @@
 <div class="align-self-center" id="accept" data-request-id="<%= @request.id %>">
   <% if @request.user == current_user %>
 
-    <%# if @request.pending? %>
-
-      <%= link_to "Cancel booking",
-              request_path(@request),
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg" %>
-
-    <%# elsif @request.confirmed? %>
-
-    <%# end %>
+    <%= render 'shared/see_your_trips' %>
 
   <% else %>
 
