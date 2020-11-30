@@ -1,7 +1,11 @@
+<div class="acontainer">
 <%= simple_form_for(@request) do |f| %>
   <%= f.input :starting_location %>
   <%= f.input :ending_location %>
-  <%= f.submit "Get Home" %>
+  <%= f.submit "Get Home", class: "btn btn-primary btn-block" %>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+<div class="align-self-center">
+<%= link_to 'Back', root_path, class: "btn btn-primary btn-large" %>
+</div>
+</div>
