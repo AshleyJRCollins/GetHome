@@ -12,7 +12,6 @@ const initRequestCable = () => {
         acceptContainer.insertAdjacentHTML('beforeend', data);
       },
     });
-  // }
 }
 
 export { initRequestCable };
