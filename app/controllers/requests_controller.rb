@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user = current_user
     @request.status = "pending"
-    if @request.save 
+    if @request.save
       redirect_to request_path(@request)
     else
       render :new

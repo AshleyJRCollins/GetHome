@@ -27,25 +27,16 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initStarRating } from '../plugins/init_star_rating';
+import { initRequestCable } from '../channels/request_channel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-});
-
-
-import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
-
-import { initAutocomplete } from '../plugins/init_autocomplete';
-
-document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
-})
-
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
+  initStarRating();
+  initRequestCable();
+});
