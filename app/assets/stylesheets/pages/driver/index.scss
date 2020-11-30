@@ -27,8 +27,11 @@
         text-decoration: none;
         right: 7px;
         color: $darkblue;
+
         .btn {
         	color: $darkblue;
+             padding: 10px;
+
         }
 }
 
@@ -39,8 +42,11 @@
 	text-decoration: none;
 	width: 80px;$-webkit-box-shadow: 7px 2px 27px 0px rgba(14,0,0,0.92); 
     box-shadow: 3px 7px 17px 0px rgba(14,0,0,0.58);
+    padding: 10px;
+    margin: 20px;
      .btn {
      	color: $lightblue;
+
 
      }
 
