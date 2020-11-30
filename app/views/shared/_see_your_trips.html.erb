@@ -1,1 +1,10 @@
-<%= link_to "See Your Trip", ride_path(Ride.find_by(request: request)) %>
+<% if @request.pending? %>
+  <%= link_to "Cancel booking",
+          request_path(@request),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg", id: 'cancel-booking' %>
+
+<% elsif @request.confirmed? %>
+  <%= link_to "See Your Trip", ride_path(Ride.find_by(request: request)) %>
+
+<% end %>
