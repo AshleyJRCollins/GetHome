@@ -4,13 +4,20 @@ class RidesController < ApplicationController
   end
 
   def create
-    @ride = Ride.new
-    @ride.user = current_user
     @request = Request.find(params[:request_id])
+    @ride = Ride.new
     @ride.request = @request
-    @ride.save
-    @request.confirmed!
-    redirect_to ride_path(@ride)
+    @ride.user = current_user
+    if @ride.save
+      @request.confirmed!
+      RequestChannel.broadcast_to(
+        @request,
+        render_to_string(partial: "shared/see_your_trips", locals: { request: @request })
+        )
+      redirect_to ride_path(@ride)
+    else
+      render 'requests/show'
+    end
   end
 
   def update
