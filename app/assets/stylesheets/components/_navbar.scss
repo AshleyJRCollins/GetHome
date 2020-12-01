@@ -16,11 +16,11 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  border: #95C8D8 solid 2px;
+  border: white solid 2px;
 }
 
 .navbar-lewagon #navbarDropdown {
-  border: #95C8D8 solid 2px;
+  border: white solid 2px;
 }
 
 .navbar-lewagon .nav-item .nav-link {
@@ -41,7 +41,14 @@
   color: white;
 }
 
+
 .img {
   height: 70px;
   width: 95px;
+}
+
+.navbar .navbar-toggler {
+  background: white;
+  border-radius: 10px;
+
 }
