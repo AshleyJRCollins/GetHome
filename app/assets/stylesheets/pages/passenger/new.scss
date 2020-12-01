@@ -1,5 +1,5 @@
 .acontainer {
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
   color: #003151;
 }
 
@@ -14,6 +14,23 @@
 }
 
 .btn-primary:hover {
+  background: white;
+  color: #003151;
+}
+
+.btn-info {
+  padding: 30px;
+  border-radius: 10px;
+  background: #003151;
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.btn-info:hover {
   background: white;
   color: #003151;
 }

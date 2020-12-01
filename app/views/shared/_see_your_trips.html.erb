@@ -2,9 +2,9 @@
   <%= link_to "Cancel booking",
           request_path(@request),
           method: :delete,
-          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg", id: 'cancel-booking' %>
+          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg btn-block", id: 'cancel-booking' %>
 
 <% elsif @request.confirmed? %>
-  <%= link_to "See Your Trip", ride_path(Ride.find_by(request: request)) %>
+  <%= link_to "See Your Trip", ride_path(Ride.find_by(request: request)), class: "btn btn-primary btn-lg btn-block" %>
 
 <% end %>
