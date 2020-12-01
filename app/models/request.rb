@@ -2,7 +2,7 @@ class Request < ApplicationRecord
   belongs_to :user
   has_one :ride
   validates :starting_location, :ending_location, presence: true
-  enum status: {confirmed: 0, declined: 1, pending: 2}
+  enum status: { confirmed: 0, pending: 1 }
   after_validation :geocode
 
   def geocode
