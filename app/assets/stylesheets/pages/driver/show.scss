@@ -17,6 +17,34 @@
   color: #003151;
 }
 
+.acontainertwo h4 {
+  font-weight: bold;
+}
+
+.acontainertwo p {
+  font-weight: bold;
+}
+
 #map {
   border-radius: 20px;
+}
+
+.checked {
+  color: orange;
+}
+
+.btn-secondary {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #003151;
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #003151;
 }
