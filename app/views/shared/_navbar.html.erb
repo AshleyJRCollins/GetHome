@@ -8,7 +8,9 @@
   </button>
 
   <div class="title">
-  <h1><%= link_to "GetHome", root_path, class: "titlebtn" %></h1>
+  <%= link_to  root_path, class: "titlebtn" do  %>
+  <%= image_tag "logo.png" , class: "img" %>
+  <% end %>
   </div>
 
 
