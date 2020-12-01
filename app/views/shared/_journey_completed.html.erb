@@ -1,7 +1,7 @@
-<% if @ride.user == current_user %>
-  <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
+<% if @ride.completed? %>
+  <%= link_to "Your trip has ended! Write a Review", new_ride_review_path(@ride), class: "btn btn-primary btn-block" %>
 <% else %>
-  <% if @ride.completed? %>
-    <%= link_to "Write a Review", new_ride_review_path(@ride), class: "btn btn-primary btn-block" %>
-  <% end %>
+  <div id="trip-in-progress">
+    <%= "Your trip is in progress..." %>
+  </div>
 <% end %>

@@ -1,9 +1,11 @@
 <div class="acontainertwo">
-
   <h1>The Journey Home</h1>
-
-<div id="review" data-ride-id="<%= @ride.id %>">
-  <%= render 'shared/journey_completed' %>
 </div>
 
+<div class="align-self-center" id="review" data-ride-id="<%= @ride.id %>">
+  <% if @ride.user == current_user %>
+    <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
+  <% else %>
+    <%= render 'shared/journey_completed' %>
+  <% end %>
 </div>
