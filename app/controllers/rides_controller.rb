@@ -23,11 +23,20 @@ class RidesController < ApplicationController
   def update
     @ride = Ride.find(params[:id])
     if @ride.update(completed: true)
+      RideChannel.broadcast_to(
+        @ride,
+        render_to_string(partial: "shared/journey_completed", locals: { ride: @ride })
+      )
       redirect_to new_ride_review_path(@ride)
     end
   end
 
   def show
+    @request = Request.find(params[:id])
     @ride = Ride.find(params[:id])
+    @markers = [
+      { lat: @request.start_latitude, lng: @request.start_longitude },
+      { lat: @request.end_latitude, lng: @request.end_longitude }
+    ]
   end
 end
