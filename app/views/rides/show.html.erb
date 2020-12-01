@@ -2,17 +2,21 @@
   <h2>The Journey Home</h2>
 </div>
 
-<div id="review" data-ride-id="<%= @ride.id %>">
-  <div id="map"
-       style="width: 100%; height: 400px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-  <div class="align-self-center">
-    <% if @ride.user == current_user %>
-      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
-    <% else %>
-      <%= render 'shared/journey_completed' %>
-    <% end %>
+<div class="acontainersix">
+  <div id="review" data-ride-id="<%= @ride.id %>">
+    <div id="map"
+      style="width: 100%; height: 500px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
+<div class="align-self-center">
+  <% if @ride.user == current_user %>
+    <h4><%= "You are currently driving home:" %></h4>
+    <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
+      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
+  <% else %>
+    <%= render 'shared/journey_completed' %>
+  <% end %>
 </div>
