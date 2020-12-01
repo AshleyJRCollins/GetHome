@@ -1,6 +1,22 @@
 <% if @ride.completed? %>
-  <%= link_to "Your trip has ended! Write a Review", new_ride_review_path(@ride), class: "btn btn-primary btn-block" %>
+  <br>
+  <div class="bannerthree" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://utahdiscountmortgage.com/wp-content/uploads/2016/08/Happy-Couple.jpg)">
+  <div class="acontainerfour">
+    <%= "Your journey" %><br>
+    <%= "home has been" %><br>
+    <%= "completed!" %>
+  </div>
+  </div>
+
+<div class="acontainertwo">
+  <p>We're glad you're now home safely with your car in the driveway.</p>
+  <p>Please let us know how your experience with GetHome was. We can't wait to hear from you!</p>
+  <br>
+<%= link_to "Write a Review", new_ride_review_path(@ride), class: "btn btn-primary btn-lg btn-block" %>
+</div>
+
 <% else %>
+  <br>
   <div id="trip-in-progress">
     <%= "Your trip is in progress..." %>
   </div>
