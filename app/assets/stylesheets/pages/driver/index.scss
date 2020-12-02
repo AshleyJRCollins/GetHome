@@ -1,6 +1,6 @@
 .index {
 	color: $darkblue;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .destination {
@@ -9,7 +9,7 @@
 	height: 181px;
 	margin: 20px;
 		.location {
-		color: $lightblue;
+		color: white;
 		padding: 15px;
 		margin: 10px;
 		background: $darkblue;
@@ -29,6 +29,7 @@
         text-decoration: none;
         right: 7px;
         color: $darkblue;
+        box-shadow: 3px 7px 17px 0px rgba(14,0,0,0.58);
 
         .btn {
         	color: $darkblue;
@@ -45,7 +46,7 @@
 	width: 80px;$-webkit-box-shadow: 7px 2px 27px 0px rgba(14,0,0,0.92);
     box-shadow: 3px 7px 17px 0px rgba(14,0,0,0.58);
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
      .btn {
      	color: white;
      }

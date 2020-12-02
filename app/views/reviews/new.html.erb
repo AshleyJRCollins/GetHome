@@ -6,7 +6,7 @@
 			<div class="col-xs-4">
 	      <%= simple_form_for [@ride, @review] do |f|%>
 	        <p>  <%= f.input :rating, collection: (1..5).to_a, label: "Was the car in good shape?" %> </p>
-	        <p><%= f.input :content, label: "please take some time to describe the service", as: :text %> </p>
+	        <p><%= f.input :content, label: "Please take some time to describe your journey with the passenger:", as: :text %> </p>
 	        <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
 	       <% end %>
 			</div>
@@ -19,11 +19,13 @@
 		<div class="row1">
 			<div class="col-xs-4">
 	      <%= simple_form_for [@ride, @review] do |f|%>
-	        <p>  <%= f.input :rating, collection: (1..5).to_a, label: "How was the drivers driving skills?" %> </p>
-	        <p><%= f.input :content, label: "Please take some time to describe the service", as: :text %>  </p>
+	        <p><%= f.input :rating, collection: (1..5).to_a, label: "How was the driver's driving skills?" %></p>
+	        <p><%= f.input :content, label: "Please take some time to describe the GetHome service:", as: :text %>  </p>
 	        <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
 	       <% end %>
 			</div>
+    </div>
+  </div>
 <% end %>
 
 			<%#= simple_form_for [@ride, @review] do |f|%>
