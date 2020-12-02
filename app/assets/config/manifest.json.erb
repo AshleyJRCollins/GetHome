@@ -1,0 +1,17 @@
+{
+  "background_color": "blue",
+  "description": "When the fun is over, let us get you home",
+  "display": "fullscreen",
+  "name": "GetHome",
+  "icons": [
+    <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+    <% file_size = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/)%>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= file_size[:size] if file_size %>",
+        "type": "image/png" 
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ]
+}
