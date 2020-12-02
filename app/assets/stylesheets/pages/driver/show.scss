@@ -35,6 +35,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.mapone {
+  margin: 20px;
 }
 
 .checked {
@@ -84,8 +89,12 @@
 }
 
  .acontainersix {
-   margin: 10px 0px 10px 0px;
- }
+   margin: 20px;
+   position: relative;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
 
 // #review {
 //   text-align: center;
@@ -93,8 +102,36 @@
 // }
 
 .acontainerseven {
-  padding-top: 10px;
+  padding-top: 30px;
   color: #003151;
   text-align: center;
 }
+
+.acontainereight {
+  position: relative;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#avatar-driver {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 100%;
+  width: 100%;
+  max-width: 100px;
+  margin: 10px;
+  border: 2px solid #003151;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.acontainernine {
+  padding-top: 30px;
+}
+
+.acontainerten {
+  padding-top: 30px;
+  margin: 0px 20px 0px 20px;
+}
+
 
