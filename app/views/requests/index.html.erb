@@ -6,10 +6,12 @@
 	 <div class="destination">
 		<% @requests.each do |request| %>
 		   <div class="location">
-				<p>Pick up - <%= request.starting_location %></p>
-				<p>Destination - <%= request.ending_location %></p>
+				<h5>Pick-up location:</h5>
+        <p><%= request.starting_location %></p>
+				<h5>Destination:</h5>
+        <p><%= request.ending_location %></p>
 				<div class="details">
-				<%= link_to 'Details', request_path(request), class: "btn" %>
+				<h5><%= link_to 'Details', request_path(request), class: "btn" %></h5>
 				</div>
 			</div>
 		 <% end %>
