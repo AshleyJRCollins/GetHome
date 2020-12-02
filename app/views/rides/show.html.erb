@@ -17,7 +17,7 @@
     <h5><%= "You are currently driving home:" %></h5>
     <div class="acontainersix">
     <div id="map"
-      style="width: 100%; height: 500px;"
+      style="width: 100%; height: 480px;"
       sytle="align-self-center"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -25,9 +25,9 @@
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@ride.user.nickname}", id: "avatar-driver" %>
   </div>
   <div class="acontainerten">
-      <%= @request.user.first_name %> <%= @request.user.last_name %><br>
-      <%= @request.user.phone_number %>
-        <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-block" %>
+      <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
+      <p><%= @request.user.phone_number %></p>
+        <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-lg btn-block" %>
   </div>
     <% else %>
       <%= render 'shared/journey_completed' %>

@@ -5,6 +5,6 @@
           data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg btn-block", id: 'cancel-booking' %>
 
 <% elsif @request.confirmed? %>
-  <%= link_to "See Your Trip", ride_path(Ride.find_by(request: request)), class: "btn btn-primary btn-lg btn-block" %>
+  <%= link_to "See your driver", ride_path(Ride.find_by(request: request)), class: "btn btn-primary btn-lg btn-block" %>
 
 <% end %>
