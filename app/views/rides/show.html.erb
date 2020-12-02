@@ -1,9 +1,9 @@
-<div class="acontainerfive">
-  <h4>The Journey Home</h4>
-</div>
+<div id="review" data-ride-id="<%= @ride.id %>">
+  <div class="acontainerfive" id="title">
+    <h4>The Journey Home</h4>
+  </div>
 
-<div class="acontainersix">
-  <div id="review" data-ride-id="<%= @ride.id %>">
+  <div class="acontainersix">
     <div id="map"
       style="width: 100%; height: 500px;"
       data-markers="<%= @markers.to_json %>"
@@ -11,13 +11,14 @@
     </div>
   </div>
 
-<div class="acontainerseven">
-  <% if @ride.user == current_user %>
-    <h5><%= "You are currently driving home:" %></h5>
-    <%= @request.user.first_name %> <%= @request.user.last_name %><br>
-    <%= @request.user.phone_number %>
-      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-block" %>
-  <% else %>
-    <%= render 'shared/journey_completed' %>
-  <% end %>
+  <div class="acontainerseven">
+    <% if @ride.user == current_user %>
+      <h5><%= "You are currently driving home:" %></h5>
+      <%= @request.user.first_name %> <%= @request.user.last_name %><br>
+      <%= @request.user.phone_number %>
+        <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-block" %>
+    <% else %>
+      <%= render 'shared/journey_completed' %>
+    <% end %>
+  </div>
 </div>
