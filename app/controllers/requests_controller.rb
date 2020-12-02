@@ -7,9 +7,9 @@ class RequestsController < ApplicationController
   end
 
   def show
-    @markers = [
-      { lat: @request.start_latitude, lng: @request.start_longitude },
-      { lat: @request.end_latitude, lng: @request.end_longitude }
+    @coords = [
+      [@request.start_latitude, @request.start_longitude],
+      [@request.end_latitude, @request.end_longitude]
     ]
   end
 
