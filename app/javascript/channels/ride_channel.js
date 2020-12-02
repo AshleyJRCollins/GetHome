@@ -7,6 +7,8 @@ const initRideCable = () => {
       console.log('id found', id)
       consumer.subscriptions.create({ channel: "RideChannel", id: id }, {
         received(data) {
+          const title = document.getElementById('title');
+          title.remove();
           const map = document.getElementById('map');
           map.remove();
           const tripInProgress = document.getElementById('trip-in-progress');
