@@ -13,11 +13,15 @@
 
 .acontainertwo {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
   color: #003151;
 }
 
-.acontainertwo h4 {
+.acontainertwo h2 {
+  padding-bottom: 10px;
+}
+
+.acontainertwo h5 {
   font-weight: bold;
 }
 
@@ -27,6 +31,10 @@
 
 #map {
   border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .checked {
@@ -35,7 +43,7 @@
 
 .btn-secondary {
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
   border-radius: 10px;
   background: #003151;
   color: white;
@@ -71,19 +79,22 @@
 
 .acontainerfive {
   text-align: center;
-  padding: 20px 20px 0px 20px;
+  padding: 35px 20px 0px 20px;
   color: #003151;
-  margin-top: 30px;
 }
 
-.acontainersix {
-  margin: 20px;
-}
+ .acontainersix {
+   margin: 10px 0px 10px 0px;
+ }
 
-#review {
+// #review {
+//   text-align: center;
+//   color: #003151;
+// }
+
+.acontainerseven {
+  padding-top: 10px;
+  color: #003151;
   text-align: center;
-  color: #003151;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 

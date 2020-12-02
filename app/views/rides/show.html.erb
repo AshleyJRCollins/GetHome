@@ -1,5 +1,5 @@
 <div class="acontainerfive">
-  <h2>The Journey Home</h2>
+  <h4>The Journey Home</h4>
 </div>
 
 <div class="acontainersix">
@@ -11,11 +11,12 @@
     </div>
   </div>
 
-<div class="align-self-center">
+<div class="acontainerseven">
   <% if @ride.user == current_user %>
-    <h4><%= "You are currently driving home:" %></h4>
-    <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
-      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-primary btn-block" %>
+    <h5><%= "You are currently driving home:" %></h5>
+    <%= @request.user.first_name %> <%= @request.user.last_name %><br>
+    <%= @request.user.phone_number %>
+      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-block" %>
   <% else %>
     <%= render 'shared/journey_completed' %>
   <% end %>

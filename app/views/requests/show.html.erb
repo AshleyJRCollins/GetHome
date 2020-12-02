@@ -1,17 +1,16 @@
 <div class="acontainertwo">
 
-<h1>Journey details</h1>
-<br>
+<h2>Journey details</h2>
 
-<h4>Time of journey home:</h4>
+<h5>Time of journey home:</h5>
   <p>35 minutes</p>
-<h4>Pick up location:</h4>
+<h5>Pick up location:</h5>
   <p><%= @request.starting_location %></p>
-<h4>Drop-off location:</h4>
+<h5>Drop-off location:</h5>
   <p><%= @request.ending_location %></p>
 
 <div id="map"
-     style="width: 100%; height: 400px;"
+     style="width: 100%; height: 430px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
@@ -21,7 +20,7 @@
   <% else %>
     <br>
     <h4>Name of passenger:</h4>
-      <p><%= @request.user.first_name %> <%= @request.user.last_name %></p>
+      <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -29,9 +28,9 @@
         <span class="fa fa-star"></span>
         <br>
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", id: "aavatar" %>
-    <h4>Car:</h4>
+    <h5>Car:</h5>
       <p><%= @request.user.car %></p>
-    <h4>Telephone number:</h4>
+    <h5>Telephone number:</h5>
       <p><%= @request.user.phone_number %></p>
   <% end %>
 
