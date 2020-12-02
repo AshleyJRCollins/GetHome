@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def new
     @review = Review.new
     @ride = Ride.find(params[:ride_id])

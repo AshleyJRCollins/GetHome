@@ -27,7 +27,7 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <br>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", id: "aavatar" %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@request.user.nickname}", id: "aavatar" %>
     <h5>Car:</h5>
       <p><%= @request.user.car %></p>
     <h5>Telephone number:</h5>

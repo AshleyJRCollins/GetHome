@@ -1,6 +1,16 @@
 class RidesController < ApplicationController
+
   def index
     @rides = Ride.all
+  end
+
+  def show
+    @request = Request.find(params[:id])
+    @ride = Ride.find(params[:id])
+    @markers = [
+      { lat: @request.start_latitude, lng: @request.start_longitude },
+      { lat: @request.end_latitude, lng: @request.end_longitude }
+    ]
   end
 
   def create
@@ -29,14 +39,5 @@ class RidesController < ApplicationController
       )
       redirect_to new_ride_review_path(@ride)
     end
-  end
-
-  def show
-    @request = Request.find(params[:id])
-    @ride = Ride.find(params[:id])
-    @markers = [
-      { lat: @request.start_latitude, lng: @request.start_longitude },
-      { lat: @request.end_latitude, lng: @request.end_longitude }
-    ]
   end
 end

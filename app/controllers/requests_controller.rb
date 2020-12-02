@@ -1,8 +1,16 @@
 class RequestsController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_request, only: %i[show destroy]
 
   def index
     @requests = Request.pending
+  end
+
+  def show
+    @markers = [
+      { lat: @request.start_latitude, lng: @request.start_longitude },
+      { lat: @request.end_latitude, lng: @request.end_longitude }
+    ]
   end
 
   def new
@@ -20,22 +28,17 @@ class RequestsController < ApplicationController
     end
   end
 
-  def show
-    @request = Request.find(params[:id])
-    @markers = [
-      { lat: @request.start_latitude, lng: @request.start_longitude },
-      { lat: @request.end_latitude, lng: @request.end_longitude }
-    ]
-  end
-
   def destroy
-    @request = Request.find(params[:id])
     @request.destroy
 
     redirect_to new_request_path
   end
 
   private
+
+  def set_request
+    @request = Request.find(params[:id])
+  end
 
   def request_params
     params.require(:request).permit(:starting_location, :ending_location)
