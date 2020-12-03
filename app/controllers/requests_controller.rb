@@ -6,13 +6,6 @@ class RequestsController < ApplicationController
     @requests = Request.pending
   end
 
-  def show
-    @coords = [
-      [@request.start_latitude, @request.start_longitude],
-      [@request.end_latitude, @request.end_longitude]
-    ]
-  end
-
   def new
     @request = Request.new
   end
@@ -26,6 +19,13 @@ class RequestsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @coords = [
+      [@request.start_longitude, @request.start_latitude],
+      [@request.end_longitude, @request.end_latitude]
+    ]
   end
 
   def destroy

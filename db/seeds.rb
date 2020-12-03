@@ -9,7 +9,3 @@ Review.destroy_all
 Ride.destroy_all
 Request.destroy_all
 User.destroy_all
-user = User.create!(email: "las@wal.com", password: "123456")
-User.create!(email: "joo@joo.com", password: "123456")
-Request.create!(starting_location: 'Sodermalm', ending_location: 'Alvik', user: user, status: 2)
-

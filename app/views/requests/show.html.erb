@@ -1,45 +1,47 @@
 <div class="acontainertwo">
 
-<h2>Journey details</h2>
+  <h2>Journey details</h2>
 
-<h5>Time of journey:</h5>
-  <p>35 minutes</p>
-<h5>Pick-up location:</h5>
-  <p><%= @request.starting_location %></p>
-<h5>Destination:</h5>
-  <p><%= @request.ending_location %></p>
+  <h5>Time of journey:</h5>
+    <div id="instructions"></div>
 
-<div id="map"
-     style="width: 100%; height: 420px;"
-     data-coords="<%= @coords.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  <h5>Pick-up location:</h5>
+    <p><%= @request.starting_location %></p>
 
-<div class="align-self-center" id="accept" data-request-id="<%= @request.id %>">
-  <% if @request.user == current_user %>
-    <%= "" %>
-  <% else %>
-    <br>
-    <h4>Name of passenger:</h4>
-      <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+  <h5>Destination:</h5>
+    <p><%= @request.ending_location %></p>
+
+  <div id="map"
+       style="width: 100%; height: 420px;"
+       data-coords="<%= @coords.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+  <div class="align-self-center" id="accept" data-request-id="<%= @request.id %>">
+    <% if @request.user == current_user %>
+      <%= "" %>
+    <% else %>
+      <br>
+      <h4>Name of passenger:</h4>
+        <h5><%= @request.user.first_name %> <%= @request.user.last_name %></h5>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
         <br>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@request.user.nickname}", id: "aavatar" %>
-    <h5>Car:</h5>
-      <p><%= @request.user.car %></p>
-    <h5>Telephone number:</h5>
-      <p><%= @request.user.phone_number %></p>
-  <% end %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@request.user.nickname}", id: "aavatar" %>
+      <h5>Car:</h5>
+        <p><%= @request.user.car %></p>
+      <h5>Telephone number:</h5>
+        <p><%= @request.user.phone_number %></p>
+    <% end %>
 
-  <% if @request.user == current_user %>
-    <%= render 'shared/see_your_trips' %>
-  <% else %>
-      <%= link_to "Accept", request_rides_path(@request), method: "post", class: "btn btn-primary btn-lg btn-block" %>
-      <div class="float-left"><%= link_to "Back", requests_path, class: "btn btn-secondary btn-lg" %></div>
-  <% end %>
-</div>
+    <% if @request.user == current_user %>
+      <%= render 'shared/see_your_trips' %>
+    <% else %>
+        <%= link_to "Accept", request_rides_path(@request), method: "post", class: "btn btn-primary btn-lg btn-block" %>
+        <div class="float-left"><%= link_to "Back", requests_path, class: "btn btn-secondary btn-lg" %></div>
+    <% end %>
+  </div>
 </div>
