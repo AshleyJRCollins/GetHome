@@ -1,6 +1,6 @@
 class Request < ApplicationRecord
   belongs_to :user
-  has_one :ride
+  has_one :ride, dependent: :destroy
   validates :starting_location, :ending_location, presence: true
   enum status: { confirmed: 0, pending: 1 }
   after_validation :geocode

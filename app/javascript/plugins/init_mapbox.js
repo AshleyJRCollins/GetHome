@@ -1,28 +1,9 @@
 import mapboxgl from 'mapbox-gl';
 
+let map;
 
-// const addMarkersToMap = (map, markers) => {
-//   markers.forEach((marker) => {
-//     new mapboxgl.Marker()
-//       .setLngLat([ marker.lng, marker.lat ])
-//       .addTo(map);
-//   });
-// };
-
-// const fitMapToMarkers = (map, markers) => {
-//   const bounds = new mapboxgl.LngLatBounds();
-//   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-//   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
-// };
-
-// create a function to make a directions request
 const getRoute = (start, end) => {
-  // make a directions request using cycling profile
-  // an arbitrary start will always be the same
-  // only the end or destination will change
   const url = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?steps=true&geometries=geojson&access_token=' + mapboxgl.accessToken;
-
-  // make an XHR request https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   const req = new XMLHttpRequest();
   req.open('GET', url, true);
   req.onload = function() {
@@ -37,10 +18,9 @@ const getRoute = (start, end) => {
         coordinates: route
       }
     };
-    // if the route already exists on the map, reset it using setData
     if (map.getSource('route')) {
       map.getSource('route').setData(geojson);
-    } else { // otherwise, make a new request
+    } else {
       map.addLayer({
         id: 'route',
         type: 'line',
@@ -66,18 +46,19 @@ const getRoute = (start, end) => {
         }
       });
     }
-    // add turn instructions here at the end
+    const instructions = document.getElementById('instructions');
+    const steps = data.legs[0].steps;
+    const tripInstructions = [];
+    for (let i = 0; i < steps.length; i++) {
+      instructions.innerHTML = '<span class="duration">' + Math.floor(data.duration / 60) + ' mins 🚗</span>' + tripInstructions;
+    }
   };
   req.send();
 }
 
 const loadRoute = (map, start, end) => {
   map.on('load', function() {
-    // make an initial directions request that
-    // starts and ends at the same location
     getRoute(start, end);
-
-    // Add starting point to the map
     map.addLayer({
       id: 'point',
       type: 'circle',
@@ -101,12 +82,35 @@ const loadRoute = (map, start, end) => {
         'circle-color': '#3887be'
       }
     });
-    // this is where the code from the next step will go
+    if (map.getLayer('end')) {
+    map.getSource('end').setData(end);
+  } else {
+    map.addLayer({
+      id: 'end',
+      type: 'circle',
+      source: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'Point',
+              coordinates: end
+            }
+          }]
+        }
+      },
+      paint: {
+        'circle-radius': 10,
+        'circle-color': '#f30'
+      }
+    });
+  }
+  getRoute(start, end)
   });
 }
-
-
-
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -116,16 +120,19 @@ const buildMap = (mapElement) => {
   });
 };
 
+const fitMapToCoordinates = (map, coordinates) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  coordinates.forEach(coordinate => bounds.extend([ coordinate[0], coordinate[1] ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) {
     const coordinates = JSON.parse(mapElement.dataset.coords);
-    const map = buildMap(mapElement);
-    const canvas = map.getCanvasContainer();
+    map = buildMap(mapElement);
     loadRoute(map, coordinates[0], coordinates[1]);
-    // const markers = JSON.parse(mapElement.dataset.markers);
-    // addMarkersToMap(map, markers);
-    // fitMapToMarkers(map, markers);
+    fitMapToCoordinates(map, coordinates);
   }
 };
 

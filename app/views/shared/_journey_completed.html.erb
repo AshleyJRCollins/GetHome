@@ -1,5 +1,4 @@
 <% if @ride.completed? %>
-  <!-- <div class="bannerthree" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://utahdiscountmortgage.com/wp-content/uploads/2016/08/Happy-Couple.jpg)"> -->
   <div class="acontainerfour">
     <h1><%= "Your journey home has been completed!" %></h1>
   </div>
@@ -7,24 +6,24 @@
 <div class="acontainertwo">
   <p>We're glad you're now home safely with your car in the driveway.</p>
   <p>Please let us know how your experience with GetHome went. We can't wait to hear from you!</p>
-<%= link_to "Write a Review", new_ride_review_path(@ride), class: "btn btn-info btn-lg btn-block" %>
+  <%= link_to "Write a Review", new_ride_review_path(@ride), class: "btn btn-info btn-lg btn-block" %>
 </div>
 
 <% else %>
   <div id="trip-in-progress">
     <div class="acontainerfive">
-    <h4>The Journey Home</h4>
-  </div>
+      <h4>The Journey Home</h4>
+    </div>
     <h5>The driver getting you home is:</h5>
     <div class="acontainereight">
-    <div id="map"
-      style="width: 100%; height: 450px;"
-      sytle="align-self-center"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div id="map"
+        style="width: 100%; height: 450px;"
+        sytle="align-self-center"
+        data-coords="<%= @coords.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@ride.user.nickname}", id: "avatar-driver" %>
     </div>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@ride.user.nickname}", id: "avatar-driver" %>
-  </div>
   <div class="acontainernine">
       <h5><%= @ride.user.first_name %> <%= @ride.user.last_name %></h5>
         <span class="fa fa-star checked"></span>
@@ -34,8 +33,6 @@
         <span class="fa fa-star checked"></span>
         <br>
     <h5>Telephone number:</h5>
-      <h5><%= @ride.user.phone_number %></h5>
-  <!-- </div> -->
+      <h5><%= @ride.request.user.phone_number %></h5>
   </div>
-</div>
 <% end %>
