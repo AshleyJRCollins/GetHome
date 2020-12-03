@@ -41,7 +41,12 @@
       <%= render 'shared/see_your_trips' %>
     <% else %>
         <%= link_to "Accept", request_rides_path(@request), method: "post", class: "btn btn-primary btn-lg btn-block" %>
-        <div class="float-left"><%= link_to "Back", requests_path, class: "btn btn-secondary btn-lg" %></div>
+    <div class="aback" >
+      <%= link_to  requests_path do %>
+        <i class="fas fa-long-arrow-alt-left"></i> back
+      <% end %>
+    </div>
     <% end %>
+        <!-- <div class="float-left"><%#= link_to "Back", requests_path, class: "btn btn-secondary btn-lg" %></div> -->
   </div>
 </div>
