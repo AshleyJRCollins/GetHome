@@ -7,7 +7,7 @@
 	      <%= simple_form_for [@ride, @review] do |f|%>
 	        <p>  <%= f.input :rating, collection: (1..5).to_a, label: "Was the car in good shape?" %> </p>
 	        <p><%= f.input :content, label: "Please take some time to describe your journey with the passenger:", as: :text %> </p>
-	        <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+	        <%= f.submit "Submit", class: "btn btn-primary btn-block laszlo" %>
 	       <% end %>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 	      <%= simple_form_for [@ride, @review] do |f|%>
 	        <p><%= f.input :rating, collection: (1..5).to_a, label: "How was the driver's driving skills?" %></p>
 	        <p><%= f.input :content, label: "Please take some time to describe the GetHome service:", as: :text %>  </p>
-	        <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+	        <%= f.submit "Submit", class: "btn btn-primary btn-block laszlo" %>
 	       <% end %>
 			</div>
     </div>
