@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #2B2D42;
+  background: transparent;
   position: fixed;
   top: 0;
   z-index: 1;
@@ -20,9 +20,11 @@
 }
 
 .navbar-lewagon #navbarDropdown {
-  border: white solid 2px;
+  // border: white solid 2px;
   margin-bottom:10px;
   margin-right: 10px;
+  font-size: 20px;
+  color: black;
 }
 
 .navbar-lewagon .nav-item .nav-link {
@@ -40,6 +42,7 @@
 }
 
 .title .titlebtn:hover {
+
   color: white;
 }
 
@@ -53,4 +56,38 @@
   background: white;
   border-radius: 10px;
 
+}
+.title {
+  font-family: $headers-font;
+  color: black;
+  font-size: 30px;
+  padding-top: 7px;
+  p{
+    font-family: "Questrial";
+    display: inline-block;
+    content: "\f018";
+    font-weight: 900;
+    vertical-align: middle;
+  }
+   // i{
+   //  color: black;
+   //  padding-top: 7px; 
+   //  text-decoration: none;
+   // }
+  a{
+    display: flex;
+    color: black;
+    text-decoration: none;
+  }
+}
+.white {
+  color: white !important;
+
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute !important;
+}
+.margin-from-navbar {
+  margin-top: 4rem;
 }
