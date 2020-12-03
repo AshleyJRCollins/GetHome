@@ -2,9 +2,11 @@
   <%= link_to "Cancel booking",
           request_path(@request),
           method: :delete,
-          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-lg btn-block", id: 'cancel-booking' %>
+          data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg btn-block", id: 'cancel-booking' %>
 
 <% elsif @request.confirmed? %>
+  <br>
+  <h5><%= "🎊 Your request has been accepted! 🎊" %></h5>
   <%= link_to "See your driver", ride_path(Ride.find_by(request: request)), class: "btn btn-primary btn-lg btn-block" %>
 
 <% end %>

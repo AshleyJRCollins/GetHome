@@ -16,11 +16,9 @@
   <div class="acontainerten">
       <h5><%= @ride.request.user.first_name %> <%= @ride.request.user.last_name %></h5>
       <p><%= @ride.request.user.phone_number %></p>
-        <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-lg btn-block" %>
+      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-lg btn-block" %>
     <% else %>
       <%= render 'shared/journey_completed' %>
     <% end %>
   </div>
 </div> 
-
-
