@@ -1,11 +1,15 @@
-<div class="acontainer">
+<div class="acontainer margin-from-navbar">
+
+
 <%= simple_form_for(@request) do |f| %>
   <%= f.input :starting_location %>
   <%= f.input :ending_location %>
   <%= f.submit "Request Driver", class: "btn btn-info btn-block" %>
 <% end %>
+  <div class="lback text-center" >
+     <%= link_to  root_path do %>
+     <i class="fas fa-long-arrow-alt-left"></i> back
+     <% end %>
+  </div>
 
-<div>
-<%= link_to 'Back', root_path, class: "btn btn-primary btn-large" %>
-</div>
 </div>
