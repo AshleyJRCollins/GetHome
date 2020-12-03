@@ -11,13 +11,14 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{@ride.request.user.nickname}", id: "avatar-driver" %>
+    </div>
   </div>
   <div class="acontainerten">
       <h5><%= @ride.request.user.first_name %> <%= @ride.request.user.last_name %></h5>
       <p><%= @ride.request.user.phone_number %></p>
-        <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-lg btn-block" %>
-  </div>
+      <%= link_to "Journey completed", ride_path(@ride), method: :put, class: "btn btn-secondary btn-lg btn-block" %>
     <% else %>
       <%= render 'shared/journey_completed' %>
     <% end %>
   </div>
+</div>
