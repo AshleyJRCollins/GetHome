@@ -40,7 +40,22 @@
 }
 
 .lback {
-  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #003151;
+  a {
+    color: #003151;
+    text-decoration: none;
+
+  }
+}
+
+.aback {
+  padding-top: 10px;
+  text-align: left;
+  font-size: 20px;
   text-decoration: none;
   color: #003151;
   a {
