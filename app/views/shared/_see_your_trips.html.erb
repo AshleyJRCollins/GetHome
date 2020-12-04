@@ -6,7 +6,7 @@
 
 <% elsif @request.confirmed? %>
   <br>
-  <h5><%= "🎊 Your request has been accepted! 🎊" %></h5>
+  <h6><%= "🎊 Your request has been accepted! 🎊" %></h6>
   <%= link_to "See your driver", ride_path(Ride.find_by(request: request)), class: "btn btn-primary btn-lg btn-block" %>
 
 <% end %>
